@@ -29,7 +29,7 @@ public:
      * 6 7 8
      */
     bool get_curr_state() const {
-        return curr_state;
+        return this->curr_state;
     }
 
     void set_curr_state(bool new_state) {
