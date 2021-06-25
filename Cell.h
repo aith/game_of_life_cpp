@@ -5,13 +5,17 @@
 #ifndef GAME_OF_LIFE_CELL_H
 #define GAME_OF_LIFE_CELL_H
 
-#include <array>
 #include "iostream"
 
 using namespace std;
 
 class Cell {
 public:
+    Cell() {
+        this->curr_state = false;
+        this->prev_state = false;
+    };
+
     Cell(bool curr_state, bool prev_state) {
         this->curr_state = curr_state;
         this->prev_state = prev_state;
@@ -28,15 +32,15 @@ public:
         return curr_state;
     }
 
-    bool set_curr_state(bool new_state) {
+    void set_curr_state(bool new_state) {
         this->curr_state = new_state;
     }
 
-    bool set_prev_state() const {
+    bool get_prev_state() const {
         return prev_state;
     }
 
-    bool get_prev_state(bool new_state) {
+    void set_prev_state(bool new_state) {
         this->prev_state = new_state;
     }
 
