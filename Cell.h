@@ -21,13 +21,6 @@ public:
         this->prev_state = prev_state;
     };
 
-    /*
-     *
-     *
-     * 1 2 3
-     * 4 x 5
-     * 6 7 8
-     */
     bool get_curr_state() const {
         return this->curr_state;
     }
@@ -42,6 +35,12 @@ public:
 
     void set_prev_state(bool new_state) {
         this->prev_state = new_state;
+    }
+
+    void swap_states() {
+        bool temp = this->prev_state;
+        this->prev_state = this->curr_state;
+        this->curr_state = temp;
     }
 
     friend ostream& operator<<(ostream& out, const Cell cell);
